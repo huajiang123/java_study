@@ -1,0 +1,27 @@
+##判断奇偶
+错误判断方法：a%2==1,当a为负数时会出错。  
+正确判断方法：a%2!=0或(a&1)==1为偶数。该方法性能更优。位操作。  
+##深拷贝与浅拷贝
+深拷贝实现的是真正的内容上的拷贝，当在拷贝引用类型成员变量时，会为引用类型成员变量单独开辟一个内存空间，而在拷贝基本类型数据时和浅拷贝一样。  
+##ArrayList
+可以用来实现动态数组功能。  
+用数组来实现，默认大小是10。  
+插入和删除用到了本地的数组复制完成。  
+注意rangeCheck()和rangeCheckForAdd()两个函数的区别：  
+rangeCheck()没有去判别index<0,因为如果index<0则会在运行时，会有jvm抛出异常(IndexOutOfBoundException)这是可见的。  
+rangeCheckForAdd()增加了判别index<0，因为如果没有加那么出错位置在本地调用的C语言中。  
+ensureExplicitCapacity(int minCapacity)来确定是否需要扩容，只有当给定容量值比当前数组的长度大的时候就需要扩容，即当前数组已经满了  
+grow(int minCapacity)是具体的扩容函数：  
+1. 默认先扩容原来数组的1.5倍得到一个拟定值：int newCapacity = oldCapacity + (oldCapacity >> 1);右移一位  
+2. 如果扩容1.5倍不够，则直接就将拟定值置为需求量，  
+3. 比较拟定扩容量是否超过了最大容量限制(最大容量限制为整数最大值减8)，如果超过了就直接设为最大值，否则就用拟定值。  
+4. 最后调用Arrays.copyOf()创建一个新数组，并将原数组的元素复制到新数组。  
+Java中排序可以通过两种方式实现：
+* 实现Comparable接口  
+* 使用Comparator比较器  
+##Vector
+更ArrayList一样都是数组实现，默认大小都是10，但是Vector的构造函数可以指定增长系数。  
+Vector同样通过一个grow()函数来进行扩容，默认情况下是扩容到原来的两倍,int newCapacity = oldCapacity + ((capacityIncrement > 0) ?capacityIncrement : oldCapacity);  
+同样其扩容的最大值是所能表示整数的最大值减8.  
+Vector中增删改查方法都是synchronized修饰的所以它是线程安全的。  
+

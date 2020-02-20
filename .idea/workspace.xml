@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="06e4b097-32fc-4e22-bbd8-82f556288ce2" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="$MAVEN_REPOSITORY$" />
+        <option name="mavenHome" value="/opt/maven/apache-maven-3.6.3" />
+        <option name="userSettingsFile" value="/opt/maven/apache-maven-3.6.3/conf/settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1XZB5sTAdEhzo5ceXDAZSzHetZn" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+    <property name="settings.editor.splitter.proportion" value="0.3154574" />
+  </component>
+  <component name="RunManager" selected="JUnit.MyTest.test_13">
+    <configuration name="IOTest.test_04" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="java_study" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="IOTest" />
+      <option name="METHOD_NAME" value="test_04" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="IOTest.test_05" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="java_study" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="IOTest" />
+      <option name="METHOD_NAME" value="test_05" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyTest.test_12" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="java_study" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MyTest" />
+      <option name="METHOD_NAME" value="test_12" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyTest.test_13" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="java_study" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MyTest" />
+      <option name="METHOD_NAME" value="test_13" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ThreadTest.test_17" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="java_study" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ThreadTest" />
+      <option name="METHOD_NAME" value="test_17" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.MyTest.test_13" />
+        <item itemvalue="JUnit.MyTest.test_12" />
+        <item itemvalue="JUnit.ThreadTest.test_17" />
+        <item itemvalue="JUnit.IOTest.test_04" />
+        <item itemvalue="JUnit.IOTest.test_05" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="06e4b097-32fc-4e22-bbd8-82f556288ce2" name="Default Changelist" comment="" />
+      <created>1581243556777</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1581243556777</updated>
+      <workItem from="1581243566046" duration="10346000" />
+      <workItem from="1581295373197" duration="15454000" />
+      <workItem from="1581319211456" duration="1819000" />
+      <workItem from="1581321407370" duration="4366000" />
+      <workItem from="1581327252801" duration="8226000" />
+      <workItem from="1581381604660" duration="26886000" />
+      <workItem from="1581469788826" duration="655000" />
+      <workItem from="1581470544685" duration="16072000" />
+      <workItem from="1581764700444" duration="19000" />
+      <workItem from="1581847343101" duration="4910000" />
+      <workItem from="1581908331394" duration="5400000" />
+      <workItem from="1581929089160" duration="8267000" />
+      <workItem from="1581988495540" duration="21257000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="263" y="44" key="#Project_Structure" timestamp="1581329282985">
+      <screen x="65" y="24" width="1301" height="744" />
+    </state>
+    <state x="263" y="44" key="#Project_Structure/65.24.1301.744@65.24.1301.744" timestamp="1581329282985" />
+    <state x="303" y="182" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1581478616299">
+      <screen x="65" y="24" width="1301" height="744" />
+    </state>
+    <state x="303" y="182" key="#com.intellij.fileTypes.FileTypeChooser/65.24.1301.744@65.24.1301.744" timestamp="1581478616299" />
+    <state x="517" y="82" key="#com.intellij.ide.util.MemberChooser" timestamp="1581479190173">
+      <screen x="65" y="24" width="1301" height="744" />
+    </state>
+    <state x="517" y="82" key="#com.intellij.ide.util.MemberChooser/65.24.1301.744@65.24.1301.744" timestamp="1581479190173" />
+    <state width="1249" height="121" key="GridCell.Tab.0.bottom" timestamp="1582035242789">
+      <screen x="65" y="24" width="1301" height="744" />
+    </state>
+    <state width="1249" height="121" key="GridCell.Tab.0.bottom/65.24.1301.744@65.24.1301.744" timestamp="1582035242789" />
+    <state width="1249" height="121" key="GridCell.Tab.0.center" timestamp="1582035242788">
+      <screen x="65" y="24" width="1301" height="744" />
+    </state>
+    <state width="1249" height="121" key="GridCell.Tab.0.center/65.24.1301.744@65.24.1301.744" timestamp="1582035242788" />
+    <state width="1249" height="121" key="GridCell.Tab.0.left" timestamp="1582035242787">
+      <screen x="65" y="24" width="1301" height="744" />
+    </state>
+    <state width="1249" height="121" key="GridCell.Tab.0.left/65.24.1301.744@65.24.1301.744" timestamp="1582035242787" />
+    <state width="1249" height="121" key="GridCell.Tab.0.right" timestamp="1582035242788">
+      <screen x="65" y="24" width="1301" height="744" />
+    </state>
+    <state width="1249" height="121" key="GridCell.Tab.0.right/65.24.1301.744@65.24.1301.744" timestamp="1582035242788" />
+    <state x="65" y="-4" width="1301" height="772" key="SettingsEditor" timestamp="1581329493776">
+      <screen x="65" y="24" width="1301" height="744" />
+    </state>
+    <state x="65" y="-4" width="1301" height="772" key="SettingsEditor/65.24.1301.744@65.24.1301.744" timestamp="1581329493776" />
+    <state x="326" y="225" key="com.intellij.ide.util.TipDialog" timestamp="1581988493597">
+      <screen x="65" y="24" width="1301" height="744" />
+    </state>
+    <state x="326" y="225" key="com.intellij.ide.util.TipDialog/65.24.1301.744@65.24.1301.744" timestamp="1581988493597" />
+    <state x="65" y="24" width="785" height="744" key="find.popup" timestamp="1581470812062">
+      <screen x="65" y="24" width="1301" height="744" />
+    </state>
+    <state x="65" y="24" width="785" height="744" key="find.popup/65.24.1301.744@65.24.1301.744" timestamp="1581470812062" />
+    <state x="379" y="168" key="run.anything.popup" timestamp="1581938930712">
+      <screen x="65" y="24" width="1301" height="744" />
+    </state>
+    <state x="379" y="168" key="run.anything.popup/65.24.1301.744@65.24.1301.744" timestamp="1581938930712" />
+    <state x="355" y="89" width="719" height="678" key="search.everywhere.popup" timestamp="1581994470406">
+      <screen x="65" y="24" width="1301" height="744" />
+    </state>
+    <state x="355" y="89" width="719" height="678" key="search.everywhere.popup/65.24.1301.744@65.24.1301.744" timestamp="1581994470406" />
+  </component>
+</project>

@@ -1,0 +1,52 @@
+##判断奇偶
+错误判断方法：a%2==1,当a为负数时会出错。  
+正确判断方法：a%2!=0或(a&1)==1为偶数。该方法性能更优。位操作。  
+##深拷贝与浅拷贝
+深拷贝实现的是真正的内容上的拷贝，当在拷贝引用类型成员变量时，会为引用类型成员变量单独开辟一个内存空间，而在拷贝基本类型数据时和浅拷贝一样。  
+##ArrayList
+可以用来实现动态数组功能。  
+用数组来实现，默认大小是10。  
+插入和删除用到了本地的数组复制完成。  
+注意rangeCheck()和rangeCheckForAdd()两个函数的区别：  
+rangeCheck()没有去判别index<0,因为如果index<0则会在运行时，会有jvm抛出异常(IndexOutOfBoundException)这是可见的。  
+rangeCheckForAdd()增加了判别index<0，因为如果没有加那么出错位置在本地调用的C语言中。  
+ensureExplicitCapacity(int minCapacity)来确定是否需要扩容，只有当给定容量值比当前数组的长度大的时候就需要扩容，即当前数组已经满了  
+grow(int minCapacity)是具体的扩容函数：  
+1. 默认先扩容原来数组的1.5倍得到一个拟定值：int newCapacity = oldCapacity + (oldCapacity >> 1);右移一位  
+2. 如果扩容1.5倍不够，则直接就将拟定值置为需求量，  
+3. 比较拟定扩容量是否超过了最大容量限制(最大容量限制为整数最大值减8)，如果超过了就直接设为最大值，否则就用拟定值。  
+4. 最后调用Arrays.copyOf()创建一个新数组，并将原数组的元素复制到新数组。  
+Java中排序可以通过两种方式实现：
+* 实现Comparable接口  
+* 使用Comparator比较器  
+##Vector
+更ArrayList一样都是数组实现，默认大小都是10，但是Vector的构造函数可以指定增长系数。  
+Vector同样通过一个grow()函数来进行扩容，默认情况下是扩容到原来的两倍,int newCapacity = oldCapacity + ((capacityIncrement > 0) ?capacityIncrement : oldCapacity);  
+同样其扩容的最大值是所能表示整数的最大值减8.  
+Vector中增删改查方法都是synchronized修饰的所以它是线程安全的。  
+##fast-fail机制
+fast-fail机制是java集合中的一种错误检测机制。当多个线程对部分集合进行结构上的改变的操作时，就有可能触fast-fail机制。这个时候就会抛出ConcurrentModificationException。  
+比如当我们在使用增强for循环的时候，同时使用ArrayList的add或者remove方法时就会触发fast-fail错误机制。  
+原理：增强for循环进行反编译后可知，其实就是使用iterator进行遍历，而arraylist.iterator()方法返回的是ArrayList的一个内部类Itr的一个对象,  
+而Itr实现了Iterator接口，Itr中有一个成员变量expectedModCount，在每次遍历的时候会校验expectedModCount是否等于ModeCount,  
+ModCount是ArrayList的一个成员变量，当调用它的add或remove方法时，就会去修改ModCount。因此就造成expectedModCount和ModCount不等，从而触发fast-fail机制。  
+##LinkedList
+可以使用LinkedList当双端队列使用，因为它实现了Deque接口。  
+LinkedList 其实是通过双向链表实现的，而双向链表是使用node类实现的，在node类中通过item来存储当前节点的值，通过pre来指向前一个节点，通过next来指向后一个节点。  
+LinkedList的随机读取:  
+先判断要读取的数的位置与size/2的大小，即去选择是从前开始读取还是从末尾开始读取。然后在开始顺序遍历，得到指定位置的数。    
+##Stack
+stack继承自vector，自然底层也是用数组实现的。  
+##HashSet
+底层使用HashMap实现  
+##HashMap
+HashMap是一个由数组+链表（红黑树）组成的散列表，可以非常方便的存储kv数据  
+HashMap使用的是懒加载机制，即声明HashMap是不会初始化数组大小，只有当真正插入数据时才进行初始化数组。HashMap有三种构造函数：  
+public HashMap(int initialCapacity, float loadFactor)，public HashMap(int initialCapacity)，public HashMap()  
+第一个和第二个构造函数会调用tableSizeFor(int initialCapacity)初始化一个threshold,这个值就是要进行扩容的阀值  
+tableSizeFor(int initialCapacity) 具体来说就是通过移位运算来获得一个大于initialCapacity且最接近2^n的数  
+1. get(Object key)方法:根据hash值和key值得到其在数组中的位置，然后与该位置的元素的hash和key相比较，如果两个相同则返回，如果两个不同则判断该元素是否有next  
+如果有则看这个元素本身是否是一个树节点，如果是树则按树的遍历方式进行遍历，如果不是则按链表的方式进行遍历。  
+2. put(K key, V value)
+
+
