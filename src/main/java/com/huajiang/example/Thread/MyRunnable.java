@@ -26,6 +26,7 @@ public class MyRunnable implements Runnable {
          * 对静态方法 Thread.yield() 的调用声明了当前线程已经完成了生命周期中最重要的部分，
          * 可以切换给其它线程来执行。该方法只是对线程调度器的一个建议，
          * 而且也只是建议具有相同优先级的其它线程可以运行。
+         * 将当前进程的状态转换为就绪状态
          */
         Thread.yield();
         System.out.println("this is MyRunnable after yield");

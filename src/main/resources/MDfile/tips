@@ -47,6 +47,44 @@ public HashMap(int initialCapacity, float loadFactor)，public HashMap(int initi
 tableSizeFor(int initialCapacity) 具体来说就是通过移位运算来获得一个大于initialCapacity且最接近2^n的数  
 1. get(Object key)方法:根据hash值和key值得到其在数组中的位置，然后与该位置的元素的hash和key相比较，如果两个相同则返回，如果两个不同则判断该元素是否有next  
 如果有则看这个元素本身是否是一个树节点，如果是树则按树的遍历方式进行遍历，如果不是则按链表的方式进行遍历。  
-2. put(K key, V value)
+2. put(K key, V value)  
+首先会判断当前数组是否为null或者判断当前数组大小是否为0,如果是，则调用resize()方法初始化数组。  
+然后进行插入操作，先计算出要插入的位置，然后与该位置上的元素进行比较，比较key值和hash值，如果相同则修改并返回旧值。否则判断该节点是否是一个红黑树节点，如果是则插入其中，  
+否则就插入到该节点的链表中，插入后修改变树的临界值，如果超过临界值则将链表变换为一颗红黑树。  
+最后修改HashMap的大小，并判断是否超过阀值，如果超过阀值则调用resize()函数修改HashMap的大小。  
+3. resize()  
+分三种情况：  
+    * 无参构造调用时，也就是put(K key, V value)函数调用时，直接将数组大小置为默认大小16,而默认阀值为数组默认大小(16)*默认的装载因子(0.75)为12。  
+    * 有参构造时，也就是put(K key, V value)函数调用时，直接将tableSizeFor(int initialCapacity)计算出来的阀值设置为数组的大小。  
+    * 正常扩容时，也就是HashMap的size比其阀值大的时候，默认情况下是将数组原来的大小扩大一倍，然后判断是否超过默认的数组大小，如果超过则将阀值也扩大一倍.      
+扩容后需要将原来的HashMap中的节点重新计算在数组中的位置，然后将元素插入到新HashMap中。当然也有三种情况：  
+    * 该节点不存在后继节点，那么可以直接将该节点插入新的HashMap中。  
+    * 该节点存在后继节点，且是一个树节点，那么就调用分割树的方法。  
+    * 该节点存在后继节点且以链表形式，此时重新计算HashMap的位置的时候会发生两种情况，一种是重新计算后的偏移量跟原来一样，一种是重新计算后的偏移量为原下标+oldcap。最后链表的插入采用尾插法的方式。    
+4. remove(Object key)  
+首先找到与指定的key的key和hash都相同的节点，  
+然后在树上删除节点，或在链表上删除节点，如果在链表上删除的话，直接将该节点的后继节点赋予该节点的前一个节点。  
+5.  迭代器iterator  
+Iterator iterator = hashmap.entrySet().iterator();  
+遍历的时候,在执行构造函数 HashIterator()的时候会遍历数组直到找到第一个不为null的节点，然后输出并遍历其后继节点。如此循环到遍历完整个HashMap。  
+6. 总结 
+首先数组的大小一定是2^n幂。  
+##LinkedHashMap
+LinkedHashMap 采用双向链表实现，因为继承自HashMap所以它并没有太多自己的方法。只是因为要根据双向链表的数据结构添加了一些回调函数，比如afterNodeAccess()，afterNodeInsertion(),afterNodeRemoval()  
+它与HashMap的区别主要在于：  
+1. containsValue()方法  
+    * HashMap 采用双层循环遍历整个map。  
+    * LinkedHashMap直接遍历整个双向链表即可实现。因此更加高效。  
+2. nextNode()方法
+    * HashMap 要先遍历数组，如果该节点的next不为空，则继续遍历他的后继链表或者它的后继的树。  
+    * LinkedHashMap 直接可以通过遍历双向链表来遍历整个map。  
+##ConcurrentHashMap
+直接采用CAS+synchronized保证并发更新的安全性。
+1. 几个重要的属性:  
+    * DEFAULT_CONCURRENCY_LEVEL = 16 默认支持的并发更新的线程数量。  
+    * MIN_TRANSFER_STRIDE = 16 扩容时，并发转义节点时，每次转移的最小节点数。  
+    
+      
+
 
 

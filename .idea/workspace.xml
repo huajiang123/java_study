@@ -1,7 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="06e4b097-32fc-4e22-bbd8-82f556288ce2" name="Default Changelist" comment="" />
+    <list default="true" id="06e4b097-32fc-4e22-bbd8-82f556288ce2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/huajiang/example/jvm/Car.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/huajiang/example/proxy/ProxyHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/huajiang/example/proxy/RealSubject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/huajiang/example/proxy/Subject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/MDfile/JVM_study" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/pics/StaticProxy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/pics/heap.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/pics/jvm.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/JVMTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ProxyTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/huajiang/example/Thread/MyRunnable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/huajiang/example/Thread/MyRunnable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MDfile/java_study.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/MDfile/java_study.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MDfile/tips" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/MDfile/tips" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/MyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MyTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MDfile/tips" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MDfile/tips" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/huajiang/example/Thread/MyRunnable.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/huajiang/example/Thread/MyRunnable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/MyTest$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/MyTest$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/MyTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/MyTest.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,9 +31,13 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -31,72 +56,86 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/pics" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
     <property name="settings.editor.splitter.proportion" value="0.3154574" />
   </component>
-  <component name="RunManager" selected="JUnit.MyTest.test_13">
-    <configuration name="IOTest.test_04" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/pics" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.ProxyTest.test_01">
+    <configuration name="JVMTest.test_04" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java_study" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="IOTest" />
+      <option name="MAIN_CLASS_NAME" value="JVMTest" />
       <option name="METHOD_NAME" value="test_04" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="IOTest.test_05" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="JVMTest.test_05" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java_study" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="IOTest" />
+      <option name="MAIN_CLASS_NAME" value="JVMTest" />
       <option name="METHOD_NAME" value="test_05" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MyTest.test_12" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="JVMTest.test_06" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java_study" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MyTest" />
-      <option name="METHOD_NAME" value="test_12" />
+      <option name="MAIN_CLASS_NAME" value="JVMTest" />
+      <option name="METHOD_NAME" value="test_06" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MyTest.test_13" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="JVMTest.test_07" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java_study" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MyTest" />
-      <option name="METHOD_NAME" value="test_13" />
+      <option name="MAIN_CLASS_NAME" value="JVMTest" />
+      <option name="METHOD_NAME" value="test_07" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ThreadTest.test_17" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ProxyTest.test_01" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java_study" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ThreadTest" />
-      <option name="METHOD_NAME" value="test_17" />
+      <option name="MAIN_CLASS_NAME" value="ProxyTest" />
+      <option name="METHOD_NAME" value="test_01" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="JUnit.JVMTest.test_04" />
+      <item itemvalue="JUnit.JVMTest.test_05" />
+      <item itemvalue="JUnit.JVMTest.test_06" />
+      <item itemvalue="JUnit.JVMTest.test_07" />
+      <item itemvalue="JUnit.ProxyTest.test_01" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.MyTest.test_13" />
-        <item itemvalue="JUnit.MyTest.test_12" />
-        <item itemvalue="JUnit.ThreadTest.test_17" />
-        <item itemvalue="JUnit.IOTest.test_04" />
-        <item itemvalue="JUnit.IOTest.test_05" />
+        <item itemvalue="JUnit.ProxyTest.test_01" />
+        <item itemvalue="JUnit.JVMTest.test_07" />
+        <item itemvalue="JUnit.JVMTest.test_06" />
+        <item itemvalue="JUnit.JVMTest.test_05" />
+        <item itemvalue="JUnit.JVMTest.test_04" />
       </list>
     </recent_temporary>
   </component>
@@ -135,6 +174,14 @@
       <workItem from="1581908331394" duration="5400000" />
       <workItem from="1581929089160" duration="8267000" />
       <workItem from="1581988495540" duration="21257000" />
+      <workItem from="1582187720811" duration="10578000" />
+      <workItem from="1582250104257" duration="12191000" />
+      <workItem from="1582285813512" duration="2268000" />
+      <workItem from="1582356056583" duration="4512000" />
+      <workItem from="1582438649462" duration="14714000" />
+      <workItem from="1582512039476" duration="15038000" />
+      <workItem from="1582593839435" duration="9829000" />
+      <workItem from="1582688818245" duration="7567000" />
     </task>
     <servers />
   </component>
@@ -146,38 +193,42 @@
       <screen x="65" y="24" width="1301" height="744" />
     </state>
     <state x="263" y="44" key="#Project_Structure/65.24.1301.744@65.24.1301.744" timestamp="1581329282985" />
-    <state x="303" y="182" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1581478616299">
+    <state x="180" y="41" width="1168" height="682" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582466123181">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
-    <state x="303" y="182" key="#com.intellij.fileTypes.FileTypeChooser/65.24.1301.744@65.24.1301.744" timestamp="1581478616299" />
-    <state x="517" y="82" key="#com.intellij.ide.util.MemberChooser" timestamp="1581479190173">
+    <state x="180" y="41" width="1168" height="682" key="#com.intellij.execution.impl.EditConfigurationsDialog/65.24.1301.744@65.24.1301.744" timestamp="1582466123181" />
+    <state x="303" y="182" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1582450244811">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
-    <state x="517" y="82" key="#com.intellij.ide.util.MemberChooser/65.24.1301.744@65.24.1301.744" timestamp="1581479190173" />
-    <state width="1249" height="121" key="GridCell.Tab.0.bottom" timestamp="1582035242789">
+    <state x="303" y="182" key="#com.intellij.fileTypes.FileTypeChooser/65.24.1301.744@65.24.1301.744" timestamp="1582450244811" />
+    <state x="517" y="82" key="#com.intellij.ide.util.MemberChooser" timestamp="1582703432052">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
-    <state width="1249" height="121" key="GridCell.Tab.0.bottom/65.24.1301.744@65.24.1301.744" timestamp="1582035242789" />
-    <state width="1249" height="121" key="GridCell.Tab.0.center" timestamp="1582035242788">
+    <state x="517" y="82" key="#com.intellij.ide.util.MemberChooser/65.24.1301.744@65.24.1301.744" timestamp="1582703432052" />
+    <state width="1249" height="123" key="GridCell.Tab.0.bottom" timestamp="1582607629700">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
-    <state width="1249" height="121" key="GridCell.Tab.0.center/65.24.1301.744@65.24.1301.744" timestamp="1582035242788" />
-    <state width="1249" height="121" key="GridCell.Tab.0.left" timestamp="1582035242787">
+    <state width="1249" height="123" key="GridCell.Tab.0.bottom/65.24.1301.744@65.24.1301.744" timestamp="1582607629700" />
+    <state width="1249" height="123" key="GridCell.Tab.0.center" timestamp="1582607629699">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
-    <state width="1249" height="121" key="GridCell.Tab.0.left/65.24.1301.744@65.24.1301.744" timestamp="1582035242787" />
-    <state width="1249" height="121" key="GridCell.Tab.0.right" timestamp="1582035242788">
+    <state width="1249" height="123" key="GridCell.Tab.0.center/65.24.1301.744@65.24.1301.744" timestamp="1582607629699" />
+    <state width="1249" height="123" key="GridCell.Tab.0.left" timestamp="1582607629699">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
-    <state width="1249" height="121" key="GridCell.Tab.0.right/65.24.1301.744@65.24.1301.744" timestamp="1582035242788" />
+    <state width="1249" height="123" key="GridCell.Tab.0.left/65.24.1301.744@65.24.1301.744" timestamp="1582607629699" />
+    <state width="1249" height="123" key="GridCell.Tab.0.right" timestamp="1582607629700">
+      <screen x="65" y="24" width="1301" height="744" />
+    </state>
+    <state width="1249" height="123" key="GridCell.Tab.0.right/65.24.1301.744@65.24.1301.744" timestamp="1582607629700" />
     <state x="65" y="-4" width="1301" height="772" key="SettingsEditor" timestamp="1581329493776">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
     <state x="65" y="-4" width="1301" height="772" key="SettingsEditor/65.24.1301.744@65.24.1301.744" timestamp="1581329493776" />
-    <state x="326" y="225" key="com.intellij.ide.util.TipDialog" timestamp="1581988493597">
+    <state x="326" y="225" key="com.intellij.ide.util.TipDialog" timestamp="1582593837550">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
-    <state x="326" y="225" key="com.intellij.ide.util.TipDialog/65.24.1301.744@65.24.1301.744" timestamp="1581988493597" />
+    <state x="326" y="225" key="com.intellij.ide.util.TipDialog/65.24.1301.744@65.24.1301.744" timestamp="1582593837550" />
     <state x="65" y="24" width="785" height="744" key="find.popup" timestamp="1581470812062">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
@@ -186,9 +237,9 @@
       <screen x="65" y="24" width="1301" height="744" />
     </state>
     <state x="379" y="168" key="run.anything.popup/65.24.1301.744@65.24.1301.744" timestamp="1581938930712" />
-    <state x="355" y="89" width="719" height="678" key="search.everywhere.popup" timestamp="1581994470406">
+    <state x="355" y="89" width="719" height="678" key="search.everywhere.popup" timestamp="1582700608160">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
-    <state x="355" y="89" width="719" height="678" key="search.everywhere.popup/65.24.1301.744@65.24.1301.744" timestamp="1581994470406" />
+    <state x="355" y="89" width="719" height="678" key="search.everywhere.popup/65.24.1301.744@65.24.1301.744" timestamp="1582700608160" />
   </component>
 </project>
