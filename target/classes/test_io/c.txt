@@ -1,0 +1,2 @@
+This is A.txt.
+The content will be copied to B.txt of this directory.

@@ -14,7 +14,7 @@ java.util.concurrent.atomic 包下定义了很多原子类型，这些类中包�
 AtomicInteger中只有一个成员变量value，且它为volatile从而实现多线程并发时的可见性。而对value的各种操作实际是通过Unsafe类的CAS（compareAndSet(expectValue，updateValue)方法）最终实现，  
 CAS原理：CAS一般应用于乐观锁机制比如：ConcurrentHashMap，ConcurrentLinkedQueue都有用到CAS来实现乐观锁，  
 通过比较expectValue 和内存中的值，如果相等则将updateValue更新进内存，而如果不等则直接返回。
-###reentrantlock:
+###reentrantlock:排他锁
 类似于synchronized的同步代码块。  
 ###选择：
 一般情况下优先选择synchronized,除非要实现高级功能，因为它是jvm实现的一种机制，jvm原生的支持它，且不用担心没有释放锁而导致的死锁问题  
@@ -38,6 +38,21 @@ java.util.concurrent 类库中提供了 Condition 类来实现线程之间的协
 * 死亡  
 ##J.U.C-AQS
 java.util.concurrent  大大提高了并发性能，AQS是J.U.C的核心  
+AQS:AbstractQueuedSynchronizer该类在J.U.C.locks包下。  
+排他锁可以分为公平和不公平形式。  
+默认的情况下是使用不公平的形式：  
+nonfairTryAcquire方法是lock方法间接调用的第一个方法，每次请求锁的时候都会调用此方法。  
+1. 首先会判断当前锁的状态，如果锁的状态为0说明没有线程正在竞争该锁，然后通过CAS设置该状态为1,并设置该线程独占该锁。  
+2. 如果不为0说明有线程正拥有该锁，但如果发现自己已经拥有锁则只是简单的++acquires，并修改state的值。  
+3. 如果不能获得锁，则调用addwaiter方法将该线程封装成节点然后加入等待队列的队尾。该方法可以分为两步，等待队列不为空，则直接将该线程加入等待队列队尾。 如果等待队列为空或者前一步失败，则调用enq方法继续加入。最后返回该节点。  
+   enq方法其实就是循环调用CAS。  
+4. 然后acquireQueued方法会根据返回的节点，将该节点阻塞掉。当然它会去判断，如果该节点的前一个节点为signal状态，那么该节点就需要阻塞，如果为cancell状态，那么就会继续向前找到第一个为signal状态的节点。然后阻塞该节点  
+至此锁住线程的过程已经结束。  
+因为当等待队列中一个线程被unpark后，会重新竞争锁，而不是直接获得锁，因此它还有可能再次阻塞，所以这是一种不公平的方式。  
+解锁：  
+1. unlock方法会调用release方法，release方法会调用tryrelease方法  
+tryrelease方法：如果线程多次锁定，则进行多次释放，直到state==0才真正释放锁，  
+release方法： 如果可以释放锁，则一般情况下唤醒队列的第一个线程。  
 ###CountDownLatch
 CountDownLatch计数器闭锁是一个能阻塞当前线程，让其他线程满足特定条件下当前线程再继续执行的<u>线程同步工具</u>。  
 
@@ -208,7 +223,61 @@ java反射机制，简单的说，反射机制的是程序运行时能够获取�
 动态代理：  
 jdk为我们提供了java.lang.reflect.InvocationHandler接口和java.lang.reflect.Proxy类，两者相互配合即可实现动态代理。  
 动态代理类：在程序运行是通过反射机制动态生成。  
-动态代理类通常代理接口下的所有类。  
+动态代理类通常代理接口下的所有类。
+不需要为每一个类创建代理类，而只需要使用一个Handler来处理所有的代理请求。    
+Spring AOP就是典型的动态代理机制的实际运用。  
+##抽象类和接口从设计的角度区分
+抽象类：它代表一类实体，只是这类实体无法实例化。  
+接口： 一般不能代表一类实体，只能代表一个或一组功能。  
+比如：shape是一个图形抽象类，它可以有三角形，矩形等子类实现。但是它们都可以被画出来，那么就可以定义一个接口Drawable来抽象它们的公共操作。具体怎么画就让它们自己实现。  
+###BIO
+存在的问题：  
+1. 每一个Socket连接服务端都会立刻开启一个线程处理 ----》连接不开启线程，IO操作再开启线程。  
+2. 每个IO操作完成之后，线程会销毁，不能销毁-----》通过线程池解决。  
+##NIO与IO
+传统IO是面向流的，且单向。  
+NIO面向的是缓冲区的。源与用户程序的<u>连接</u>  
+NIO主要是为了弥补IO的不足所产生的。因为IO速度慢，且是阻塞式的，所以效率低。
+NIO主要应用与聊天服务器，有很多的连接，但每个连接每次发送很少的数据。  
+阻塞与非阻塞是相较于网络通信而言的。  
+传统IO是基于字节流和字符流进行操作，而NIO是基于Channel和Buffer进行操作。数据总是从通道读入缓冲区中，或者从缓冲区写入通道。  
+传统IO是阻塞的，这就意味着如果一个线程调用了read或者write，那么它会一直等待直到数据被读入或写入。而NIO不需要这么做，当当前没有数据可用时，它不会阻塞而是去做一些其他的事情。  
+NIO三大核心：  
+1. Channel  
+2. Buffer  
+3. Selector  
+###Channel
+channel 本身自己不能传输数据，因此要和Buffer配合使用。  
+Channel和IO中Stream流是差不多一个等级的，只不过Stream流是单向的，比如InputStream，OutputStream。而Channel是双向的。  
+* FileChannel:是阻塞的，它没有非阻塞模式。  
+* SocketChannel  
+* ServerSocketChannel  
+* DatagramChannel  
+###Buffer
+非直接缓冲区：通过allocate()方法分配缓冲区，将缓冲区建立在JVM的内存中。  
+直接缓冲区： 通过allocateDirect()方法分配直接缓冲区，将缓冲区建立在物理内存中，可以提高效率。其实是在物理内存中建立映射文件
+获取通道的三种方式：  
+1. 通过本地IO：  
+    * FileInputStream/FileOutputStream
+    * RandomAccessFile
+2. 网络IO:  
+    * Socket
+    * ServerSocket
+    * DatagramSocket  
+3. 在jdk1.7中的NIO.2 针对通道提供了静态方法open()  
+4. 在jdk1.7中的NIO.2的Filess工具类的newByteChannel()    
+核心方法：
+put()  
+get()  
+flip()  
+rewind()重复读  
+clear()(但缓冲区中的数据依然存在，只不过它是遗忘状态)  
+remaining()
+核心属性：  
+1. capacity:  
+2. limit: 缓冲区中可以操作的数据的大小。（limit后面的数据是不能读写的）  
+3. position：正在操作数据的位置。  
+4. mark:标记，表示记录当前position的位置，可以通过reset()方法回到
 
 
 
